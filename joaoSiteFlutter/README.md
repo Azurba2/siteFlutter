@@ -2,15 +2,10 @@
 
 A new Flutter project.
 
-## Getting Started
+## How to deploy
 
-This project is a starting point for a Flutter application.
+Basically, on the github repository, you only need to have the build/web. In order to generate this, flutter build web --release. This will generate the build/web folder. Copy all the contents of the web folder into the github repo.
 
-A few resources to get you started if this is your first Flutter project:
+https://www.youtube.com/watch?v=4lN22IKU5aU
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://www.youtube.com/watch?v=iOra0bxlWdE&t=262s
