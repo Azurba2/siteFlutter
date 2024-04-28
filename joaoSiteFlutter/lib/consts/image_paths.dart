@@ -1,0 +1,31 @@
+class Paths {
+  static const String flutter = "assets/images/flutter-icon.webp";
+  static const String angular = "assets/images/angular-logo.png";
+  static const String antra = "assets/images/antra.JPG";
+  static const String csharp = "assets/images/C#.png";
+  static const String communication = "assets/images/communication.png";
+  static const String csu = "assets/images/csu.png";
+  static const String csuimg = "assets/images/csuimg.JPG";
+  static const String dart = "assets/images/Dart_logo.png";
+  static const String diletta = "assets/images/diletta.jpg";
+  static const String fotocurriculo =
+      "assets/images/fotoCurriculo_Linkedin.PNG";
+  static const String logo = "assets/images/joao_piment_black_center.png";
+  static const String leader = "assets/images/leader.jpg";
+  static const String linkedin = "assets/images/linkedin.png";
+  static const String medal = "assets/images/medal.png";
+  static const String net = "assets/images/net.png";
+  static const String postman = "assets/images/postman.png";
+  static const String puc = "assets/images/puc.JPG";
+  static const String puclogo = "assets/images/puclogo.png";
+  static const String sql = "assets/images/SQL.png";
+  static const String usp = "assets/images/lusp.JPG";
+  static const String usplogo = "assets/images/usplogo.png";
+  static const String react = "assets/images/react.png";
+  static const String java = "assets/images/java.png";
+  static const String firebase = "assets/images/firebase.png";
+  static const String googleCloud = "assets/images/googleCloud.png";
+  static const String googlePlay = "assets/images/google-play-badge.png";
+  static const String appStore = "assets/images/app-store.svg";
+  static const String microsoftStore = "assets/images/microsoftGet.png";
+}
