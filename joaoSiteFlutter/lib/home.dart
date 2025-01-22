@@ -1,10 +1,11 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:joao_site_flutter/About/about_me.dart';
 import 'package:joao_site_flutter/consts/colors.dart';
 import 'package:joao_site_flutter/Education/education.dart';
 import 'package:joao_site_flutter/Experience/experience.dart';
 import 'package:joao_site_flutter/Projects/projects.dart';
-import 'package:joao_site_flutter/consts/image_paths.dart';
+import 'package:joao_site_flutter/shared/screen_sizes_enum.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,221 +15,146 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
-  late TabController _tabController;
+  ScreenSizeEnum platform = ScreenSizeEnum.browser;
   int whichMobilePageToRender = 1;
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 4, vsync: this);
-  }
-
+  String _selectedButton = "About me";
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth > 910) {
-          return _browserLayout(constraints.maxWidth);
+        if (constraints.maxWidth > 1200) {
+          platform = ScreenSizeEnum.browser;
+        } else if (constraints.maxWidth >= 600 &&
+            constraints.maxWidth <= 1199) {
+          platform = ScreenSizeEnum.tablet;
         } else {
-          return _mobileLayout();
+          platform = ScreenSizeEnum.mobile;
         }
+        return _app(platform, constraints.maxWidth);
       },
     );
   }
 
-  Widget _browserLayout(double maxWidth) {
-    print(maxWidth);
+  Widget _app(ScreenSizeEnum platform, double screenSize) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(130),
-        child: AppBar(
-          backgroundColor: ColorPalette.appBarDark,
-          flexibleSpace: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                height: 100,
-                width: MediaQuery.of(context).size.width * 0.2,
-                alignment: Alignment.centerLeft,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(
-                          'assets/images/joao_piment_black_center.png'),
-                      fit: BoxFit.fitHeight),
-                ),
-              ),
-            ],
-          ),
-          bottom: TabBar(
-            labelColor: Colors.white,
-            unselectedLabelColor: ColorPalette.logoGreen,
-            dividerColor: ColorPalette.logoGreen,
-            indicatorColor: Colors.transparent,
-            controller: _tabController,
-            tabs: const [
-              Tab(
-                child: Text(
-                  'About Me',
-                  style: TextStyle(fontSize: 22),
-                ),
-              ),
-              Tab(
-                child: Text(
-                  'Experience',
-                  style: TextStyle(fontSize: 22),
-                ),
-              ),
-              Tab(
-                child: Text(
-                  'Education',
-                  style: TextStyle(fontSize: 22),
-                ),
-              ),
-              Tab(
-                child: Text(
-                  'Projects',
-                  style: TextStyle(fontSize: 22),
-                ),
-              ),
-            ],
-          ),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(180),
+          child: AppBar(
+              backgroundColor: ColorPalette.appBarDark,
+              flexibleSpace:
+                  screenSize > 1080 ? withLogoStructure() : noLogoStructure()),
         ),
-      ),
-      body: _buildBodyBrowserLayout(false, maxWidth),
-    );
+        body: Builder(
+          builder: (context) {
+            switch (_selectedButton) {
+              case "Experience":
+                return Experience(platform: platform);
+              case "Projects":
+                return Projects(platform: platform);
+              case "Education":
+                return Education(platform: platform);
+              default:
+                return AboutMe(platform: platform);
+            }
+          },
+        ));
   }
 
-  Widget _mobileLayout() {
-    return Scaffold(
-      appBar: AppBar(
-          backgroundColor: ColorPalette.appBarDark,
-          iconTheme: const IconThemeData(color: Colors.white),
-          title: SizedBox(
-            height: 100,
-            width: 250,
-            child: Image.asset(
-              Paths.logo,
-            ),
-          )),
-      drawer: Drawer(
-        backgroundColor: Colors.white,
-        child: ListView(
-          padding: EdgeInsets.zero,
+  Widget withLogoStructure() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Row(children: [
+        Row(
           children: [
             SizedBox(
-                height: 105,
-                child: DrawerHeader(
-                    decoration: const BoxDecoration(
-                      color: ColorPalette.appBarDark,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        InkWell(
-                          onTap: () => Navigator.pop(context),
-                          child: const Icon(
-                            Icons.close,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ))),
-            ListTile(
-              title: const Text(
-                'About Me',
-                style: TextStyle(color: ColorPalette.regularGreen),
-              ),
-              onTap: () {
-                setState(() {
-                  whichMobilePageToRender = 1;
-                });
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Experience',
-                  style: TextStyle(color: ColorPalette.regularGreen)),
-              onTap: () {
-                setState(() {
-                  whichMobilePageToRender = 2;
-                });
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Education',
-                  style: TextStyle(color: ColorPalette.regularGreen)),
-              onTap: () {
-                setState(() {
-                  whichMobilePageToRender = 3;
-                });
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Projects',
-                  style: TextStyle(color: ColorPalette.regularGreen)),
-              onTap: () {
-                setState(() {
-                  whichMobilePageToRender = 4;
-                });
-                Navigator.pop(context);
-              },
-            ),
+                width: 350,
+                child:
+                    Image.asset("assets/images/joao_piment_black_center.png")),
           ],
         ),
-      ),
-      body: _buildBodyMobileLayout(true),
-    );
-  }
-
-  Widget _buildBodyBrowserLayout(bool isMobile, double maxWidth) {
-    return Column(
-      children: [
-        Expanded(
-          child: TabBarView(
-            controller: _tabController,
-            children: [
-              AboutMe(
-                isMobile: isMobile,
-              ),
-              Experience(isMobile: false, maxWidth: maxWidth),
-              const Education(isMobile: false),
-              Projects(
-                isMobile: false,
-              ),
-            ],
-          ),
+        const Expanded(child: SizedBox()),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [noLogoStructure()],
         ),
-      ],
+      ]),
     );
   }
 
-  Widget _buildBodyMobileLayout(bool isMobile) {
-    Widget page;
-    switch (whichMobilePageToRender) {
-      case 1:
-        page = const AboutMe(isMobile: true);
-        break;
-      case 2:
-        page = page = Experience(isMobile: true);
-        break;
-      case 3:
-        page = page = const Education(isMobile: true);
-        break;
-      case 4:
-        page = page = Projects(isMobile: true);
-        break;
-      default:
-        page = const AboutMe(isMobile: true);
-        break;
-    }
-    return page;
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
+  Widget noLogoStructure() {
+    return Center(
+      child: Wrap(
+        crossAxisAlignment: WrapCrossAlignment.center,
+        alignment: WrapAlignment.start,
+        spacing: 16.0,
+        runSpacing: 16.0,
+        children: [
+          TextButton(
+            onPressed: () {
+              setState(() {
+                _selectedButton = "About me";
+              });
+            },
+            child: Text(
+              "About me",
+              style: TextStyle(
+                fontSize: 30,
+                color: _selectedButton == "About me"
+                    ? ColorPalette.logoGreen
+                    : Colors.white,
+              ),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              setState(() {
+                _selectedButton = "Experience";
+              });
+            },
+            child: Text(
+              "Experience",
+              style: TextStyle(
+                fontSize: 30,
+                color: _selectedButton == "Experience"
+                    ? ColorPalette.logoGreen
+                    : Colors.white,
+              ),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              setState(() {
+                _selectedButton = "Education";
+              });
+            },
+            child: Text(
+              "Education",
+              style: TextStyle(
+                fontSize: 30,
+                color: _selectedButton == "Education"
+                    ? ColorPalette.logoGreen
+                    : Colors.white,
+              ),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              setState(() {
+                _selectedButton = "Projects";
+              });
+            },
+            child: Text(
+              "Projects",
+              style: TextStyle(
+                fontSize: 30,
+                color: _selectedButton == "Projects"
+                    ? ColorPalette.logoGreen
+                    : Colors.white,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

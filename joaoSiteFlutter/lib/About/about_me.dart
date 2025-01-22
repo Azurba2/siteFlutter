@@ -3,12 +3,13 @@ import 'package:joao_site_flutter/consts/colors.dart';
 import 'package:joao_site_flutter/About/tech_stack_container.dart';
 import 'package:joao_site_flutter/consts/image_paths.dart';
 import 'package:joao_site_flutter/consts/text.dart';
+import 'package:joao_site_flutter/shared/screen_sizes_enum.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutMe extends StatefulWidget {
-  final bool isMobile;
+  ScreenSizeEnum platform;
 
-  const AboutMe({super.key, required this.isMobile});
+  AboutMe({super.key, required this.platform});
 
   @override
   State<AboutMe> createState() => _AboutMeState();
@@ -117,9 +118,9 @@ class _AboutMeState extends State<AboutMe> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          widget.isMobile
-              ? aboutMeMobile(context, techStackDataMobile)
-              : aboutMeBrowser(context, techStackDataBrowser),
+          widget.platform == ScreenSizeEnum.browser
+              ? aboutMeBrowser(context, techStackDataBrowser)
+              : aboutMeMobile(context, techStackDataMobile)
         ],
       ),
     );
@@ -152,7 +153,8 @@ class _AboutMeState extends State<AboutMe> {
                         ),
                         GestureDetector(
                           onTap: () => _launchURL(
-                              'https://www.linkedin.com/in/joao-giudice', context),
+                              'https://www.linkedin.com/in/joao-giudice',
+                              context),
                           child: ClipRRect(
                             child: Image.asset(Paths.linkedin,
                                 width: 45, height: 45, fit: BoxFit.fill),
@@ -210,35 +212,7 @@ class _AboutMeState extends State<AboutMe> {
                                   ElevatedButton(
                                     onPressed: () {
                                       _launchURL(
-                                          'https://1drv.ms/b/s!Aq_4EhaJUcWMj50oHbhaJRGzg5zx0w?e=eLCmCO',context);
-                                    },
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: Colors.white,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                        side: const BorderSide(
-                                            color: ColorPalette.regularGreen),
-                                      ),
-                                    ),
-                                    child: const Column(
-                                      children: [
-                                        SizedBox(height: 12),
-                                        Text(
-                                          "English",
-                                          style: TextStyle(
-                                              fontSize: 30,
-                                              color: ColorPalette.regularGreen),
-                                          textAlign: TextAlign.justify,
-                                        ),
-                                        SizedBox(height: 12),
-                                      ],
-                                    ),
-                                  ),
-                                  const SizedBox(width: 25),
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      _launchURL(
-                                          "https://1drv.ms/b/s!Aq_4EhaJUcWMj50lZn9tLil7-4iygw?e=VuxiaB",
+                                          'https://1drv.ms/w/s!Aq_4EhaJUcWMj-tzlorOXjGy5ZyfBQ?e=Z9rfJm',
                                           context);
                                     },
                                     style: ElevatedButton.styleFrom(
@@ -249,17 +223,58 @@ class _AboutMeState extends State<AboutMe> {
                                             color: ColorPalette.regularGreen),
                                       ),
                                     ),
-                                    child: const Column(
+                                    child: Column(
                                       children: [
-                                        SizedBox(height: 12),
-                                        Text(
+                                        const SizedBox(height: 5),
+                                        SizedBox(
+                                          height: 40,
+                                          width: 40,
+                                          child: Image.asset(
+                                              "assets/images/Flag_of_the_United_States.png"),
+                                        ),
+                                        const SizedBox(height: 5),
+                                        const Text(
+                                          "English",
+                                          style: TextStyle(
+                                              fontSize: 30,
+                                              color: ColorPalette.regularGreen),
+                                          textAlign: TextAlign.justify,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  const SizedBox(width: 25),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      _launchURL(
+                                          "https://1drv.ms/w/s!Aq_4EhaJUcWMj-txtfOua4yplzo22g?e=xxGkPv",
+                                          context);
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        side: const BorderSide(
+                                            color: ColorPalette.regularGreen),
+                                      ),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        const SizedBox(height: 5),
+                                        SizedBox(
+                                          height: 40,
+                                          width: 40,
+                                          child: Image.asset(
+                                              "assets/images/Flag_of_Brazil.png"),
+                                        ),
+                                        const SizedBox(height: 5),
+                                        const Text(
                                           "Portuguese",
                                           style: TextStyle(
                                               fontSize: 30,
                                               color: ColorPalette.regularGreen),
                                           textAlign: TextAlign.justify,
                                         ),
-                                        SizedBox(height: 12),
                                       ],
                                     ),
                                   ),
@@ -302,7 +317,9 @@ class _AboutMeState extends State<AboutMe> {
     if (await canLaunchUrl(site)) {
       await launchUrl(site);
     } else {
-      faultyLinkDialog(context);
+      if (mounted) {
+        faultyLinkDialog(context);
+      }
     }
   }
 
@@ -320,10 +337,6 @@ class _AboutMeState extends State<AboutMe> {
             children: [
               Column(
                 children: [
-                  const Text(
-                    "About me",
-                    style: AppTextStyles.titleMobileBlack,
-                  ),
                   const SizedBox(
                     height: 30,
                   ),
@@ -336,8 +349,8 @@ class _AboutMeState extends State<AboutMe> {
                     height: 30,
                   ),
                   GestureDetector(
-                    onTap: () =>
-                        _launchURL('https://www.linkedin.com/in/joao-giudice', context),
+                    onTap: () => _launchURL(
+                        'https://www.linkedin.com/in/joao-giudice', context),
                     child: ClipRRect(
                       child: Image.asset(Paths.linkedin,
                           width: 35, height: 30, fit: BoxFit.fill),
@@ -387,69 +400,82 @@ class _AboutMeState extends State<AboutMe> {
                     ),
                   ),
                   const SizedBox(height: 25),
-                        isButtonClicked
-                            ? Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
+                  isButtonClicked
+                      ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                _launchURL(
+                                    'https://1drv.ms/w/s!Aq_4EhaJUcWMj-tzlorOXjGy5ZyfBQ?e=Z9rfJm',
+                                    context);
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  side: const BorderSide(
+                                      color: ColorPalette.regularGreen),
+                                ),
+                              ),
+                              child: Column(
                                 children: [
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      _launchURL(
-                                          'https://1drv.ms/b/s!Aq_4EhaJUcWMj50oHbhaJRGzg5zx0w?e=eLCmCO', context);
-                                    },
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: Colors.white,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                        side: const BorderSide(
-                                            color: ColorPalette.regularGreen),
-                                      ),
-                                    ),
-                                    child: const Column(
-                                      children: [
-                                        SizedBox(height: 12),
-                                        Text(
-                                          "English",
-                                          style: TextStyle(
-                                              fontSize: 30,
-                                              color: ColorPalette.regularGreen),
-                                          textAlign: TextAlign.justify,
-                                        ),
-                                        SizedBox(height: 12),
-                                      ],
-                                    ),
+                                  const SizedBox(height: 5),
+                                  SizedBox(
+                                    height: 40,
+                                    width: 40,
+                                    child: Image.asset(
+                                        "assets/images/Flag_of_the_United_States.png"),
                                   ),
-                                  const SizedBox(height: 25),
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      _launchURL(
-                                          "https://1drv.ms/b/s!Aq_4EhaJUcWMj50lZn9tLil7-4iygw?e=VuxiaB", context);
-                                    },
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: Colors.white,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                        side: const BorderSide(
-                                            color: ColorPalette.regularGreen),
-                                      ),
-                                    ),
-                                    child: const Column(
-                                      children: [
-                                        SizedBox(height: 12),
-                                        Text(
-                                          "Portuguese",
-                                          style: TextStyle(
-                                              fontSize: 30,
-                                              color: ColorPalette.regularGreen),
-                                          textAlign: TextAlign.justify,
-                                        ),
-                                        SizedBox(height: 12),
-                                      ],
-                                    ),
+                                  const SizedBox(height: 5),
+                                  const Text(
+                                    "English",
+                                    style: TextStyle(
+                                        fontSize: 30,
+                                        color: ColorPalette.regularGreen),
+                                    textAlign: TextAlign.justify,
                                   ),
                                 ],
-                              )
-                            : Container()
+                              ),
+                            ),
+                            const SizedBox(height: 25),
+                            ElevatedButton(
+                                onPressed: () {
+                                  _launchURL(
+                                      "https://1drv.ms/w/s!Aq_4EhaJUcWMj-txtfOua4yplzo22g?e=xxGkPv",
+                                      context);
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    side: const BorderSide(
+                                        color: ColorPalette.regularGreen),
+                                  ),
+                                ),
+                                child: Column(
+                                  children: [
+                                    const SizedBox(height: 5),
+                                    SizedBox(
+                                      height: 40,
+                                      width: 40,
+                                      child: Image.asset(
+                                          "assets/images/Flag_of_Brazil.png"),
+                                    ),
+                                    const SizedBox(height: 5),
+                                    const Text(
+                                      "Portuguese",
+                                      style: TextStyle(
+                                          fontSize: 30,
+                                          color: ColorPalette.regularGreen),
+                                      textAlign: TextAlign.justify,
+                                    ),
+                                  ],
+                                )),
+                          ],
+                        )
+                      : Container()
                 ],
               ),
               const SizedBox(height: 30),
@@ -480,24 +506,25 @@ class _AboutMeState extends State<AboutMe> {
     );
   }
 
-  Future<void> faultyLinkDialog(BuildContext context){
-  return showDialog<String>(
-        context: context,
-        builder: (BuildContext context) => AlertDialog(
-          title: const Center(
-            child: 
-              Icon(Icons.error, size: 40, color: Colors.white),
-          ),
-          content: const Text("It seems there was a problem opening this link. Please try again later", style: TextStyle(fontSize: 20, color: Colors.white)),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () => Navigator.pop(context, 'OK'),
-              child: const Text('Fechar', style: TextStyle(fontSize: 20, color: Colors.white)),
-            ),
-          ],
-          backgroundColor: Colors.red,
+  Future<void> faultyLinkDialog(BuildContext context) {
+    return showDialog<String>(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        title: const Center(
+          child: Icon(Icons.error, size: 40, color: Colors.white),
         ),
-      );
-}
-
+        content: const Text(
+            "It seems there was a problem opening this link. Please try again later",
+            style: TextStyle(fontSize: 20, color: Colors.white)),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.pop(context, 'OK'),
+            child: const Text('Close',
+                style: TextStyle(fontSize: 20, color: Colors.white)),
+          ),
+        ],
+        backgroundColor: Colors.redAccent,
+      ),
+    );
+  }
 }
