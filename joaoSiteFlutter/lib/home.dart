@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:joao_site_flutter/About/about_me.dart';
+import 'package:joao_site_flutter/Articles/articles.dart';
 import 'package:joao_site_flutter/consts/colors.dart';
 import 'package:joao_site_flutter/Education/education.dart';
 import 'package:joao_site_flutter/Experience/experience.dart';
@@ -53,6 +54,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 return Projects(platform: platform);
               case "Education":
                 return Education(platform: platform);
+              case "Articles":
+                return Articles(platform: platform);
               default:
                 return AboutMe(platform: platform);
             }
@@ -148,6 +151,22 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               style: TextStyle(
                 fontSize: 30,
                 color: _selectedButton == "Projects"
+                    ? ColorPalette.logoGreen
+                    : Colors.white,
+              ),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              setState(() {
+                _selectedButton = "Articles";
+              });
+            },
+            child: Text(
+              "Articles",
+              style: TextStyle(
+                fontSize: 30,
+                color: _selectedButton == "Articles"
                     ? ColorPalette.logoGreen
                     : Colors.white,
               ),

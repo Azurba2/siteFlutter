@@ -10,6 +10,10 @@ class Projects extends StatelessWidget {
 
   final ScreenSizeEnum platform;
 
+  final List<ExperienceSkillDto> ammonite = [
+    ExperienceSkillDto(path: Paths.flutter, name: "Flutter"),
+  ];
+
   final List<ExperienceSkillDto> rjDigital = [
     ExperienceSkillDto(path: Paths.flutter, name: "Flutter"),
     ExperienceSkillDto(path: Paths.firebase, name: "Firebase"),
@@ -65,17 +69,30 @@ class Projects extends StatelessWidget {
             alignment: WrapAlignment.center,
             spacing: 20,
             children: [
-              // SharedCard(
-              //   height: platform != ScreenSizeEnum.browser ? 680 : 520,
-              //   width: 400,
-              //   title: "RJ Digital (Kiosk)",
-              //   location: "At Diletta Solutions",
-              //   summary:
-              //       "Led the development of the RJ Digital kiosk, designed for placement in public areas throughout the state of Rio de Janeiro to facilitate access for all citizens. The kiosk includes most of the features available on the mobile application, with additional integrated scanners, printers, and a fingerprint sensor, allowing users to easily submit documents and receive printed confirmations directly from the kiosk.",
-              //   skills: rjDigital,
-              //   //store: true,
-              //   //kiosk: true,
-              // ),
+              SharedCard(
+                  height: platform != ScreenSizeEnum.browser ? 680 : 520,
+                  width: 400,
+                  title: "Ammonite MTG Companion",
+                  location: "Personal Project",
+                  summary:
+                      "It's a tool for enhancing the game experience of Magic: The Gathering. It has an intuitive design and never-before-seen features compared to other similar applications.",
+                  skills: ammonite,
+                  button: "Website",
+                  onPressed: () =>
+                      _launchURL("https://ammonitemtgcompanion.com/", context)),
+              //store: true,
+              //kiosk: true,
+              SharedCard(
+                height: platform != ScreenSizeEnum.browser ? 680 : 520,
+                width: 400,
+                title: "RJ Digital (Kiosk)",
+                location: "At Diletta Solutions",
+                summary:
+                    "Led the development of the RJ Digital kiosk, designed for placement in public areas throughout the state of Rio de Janeiro to facilitate access for all citizens. The kiosk includes most of the features available on the mobile application, with additional integrated scanners, printers, and a fingerprint sensor, allowing users to easily submit documents and receive printed confirmations directly from the kiosk.",
+                skills: rjDigital,
+                //store: true,
+                //kiosk: true,
+              ),
               SharedCard(
                 height: platform != ScreenSizeEnum.browser ? 680 : 520,
                 width: 400,
