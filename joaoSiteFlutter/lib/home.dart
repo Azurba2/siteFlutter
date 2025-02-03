@@ -39,11 +39,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   Widget _app(ScreenSizeEnum platform, double screenSize) {
     return Scaffold(
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(180),
+          preferredSize: const Size.fromHeight(230),
           child: AppBar(
               backgroundColor: ColorPalette.appBarDark,
               flexibleSpace:
-                  screenSize > 1080 ? withLogoStructure() : noLogoStructure()),
+                  screenSize > 1220 ? withLogoStructure() : noLogoStructure()),
         ),
         body: Builder(
           builder: (context) {
