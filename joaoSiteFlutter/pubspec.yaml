@@ -97,6 +97,9 @@ flutter:
     - assets/images/microsoftGet.png
     - assets/images/Flag_of_the_United_States.png
     - assets/images/Flag_of_Brazil.png
+    - assets/images/accessibility.PNG
+    - assets/images/flutterTree.PNG
+    - assets/images/flutterRobot.PNG
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

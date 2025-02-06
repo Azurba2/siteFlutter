@@ -19,13 +19,23 @@ class Articles extends StatelessWidget {
             spacing: 20,
             children: [
               SharedCard(
+                  title: "Flutter Architecture made it easy",
+                  summary:
+                      "In this article, I’ll simplify the abstract concept of Flutter’s architecture, making it easy for everyone to understand",
+                  height: 830,
+                  width: 400,
+                  button: "Read at Dev.to",
+                  image: "assets/images/flutterTree.PNG",
+                  onPressed: () => _launchURL("", context)),
+              SharedCard(
                   title:
                       "Accessibility For The Elderly in Mobile Applications: an analysis for optimal UX Design",
                   summary:
                       "This article explores how UX design affects older adults' ability to use mobile applications. Drawing from personal experiences and accessibility concerns, I used Flutter to create two app versions—one with accessibility features and one without—to examine how limited accessibility impacts user experience.",
-                  height: platform != ScreenSizeEnum.browser ? 680 : 520,
+                  height: 830,
                   width: 400,
                   button: "Read at Dev.to",
+                  image: "assets/images/accessibility.PNG",
                   onPressed: () => _launchURL(
                       "https://dev.to/joo_pimenta_29a8b0e8bb42/accessibility-for-the-elderly-in-mobile-applications-an-analysis-for-optimal-ux-design-550h",
                       context)),

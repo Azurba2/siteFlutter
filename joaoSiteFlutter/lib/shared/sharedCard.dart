@@ -25,23 +25,23 @@ class SharedCard extends StatelessWidget {
   final bool? store;
   final bool? kiosk;
 
-  const SharedCard(
-      {Key? key,
-      required this.title,
-      required this.summary,
-      required this.height,
-      required this.width,
-      this.skills,
-      this.date,
-      this.button,
-      this.image,
-      this.position,
-      this.location,
-      this.onPressed,
-      this.award,
-      this.store,
-      this.kiosk})
-      : super(key: key);
+  const SharedCard({
+    Key? key,
+    required this.title,
+    required this.summary,
+    required this.height,
+    required this.width,
+    this.skills,
+    this.date,
+    this.button,
+    this.image,
+    this.position,
+    this.location,
+    this.onPressed,
+    this.award,
+    this.store,
+    this.kiosk,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -66,9 +66,11 @@ class SharedCard extends StatelessWidget {
                       topLeft: Radius.circular(10),
                       topRight: Radius.circular(10),
                     ),
-                    child: Image.asset(
-                      image!,
-                      fit: BoxFit.fitWidth,
+                    child: SizedBox(
+                      child: Image.asset(
+                        image!,
+                        fit: BoxFit.fitWidth,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 15),
