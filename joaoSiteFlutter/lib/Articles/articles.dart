@@ -26,7 +26,9 @@ class Articles extends StatelessWidget {
                   width: 400,
                   button: "Read at Dev.to",
                   image: "assets/images/flutterTree.PNG",
-                  onPressed: () => _launchURL("", context)),
+                  onPressed: () => _launchURL(
+                      "https://dev.to/joaopimentag/flutter-architecture-made-it-easy-4b9b",
+                      context)),
               SharedCard(
                   title:
                       "Accessibility For The Elderly in Mobile Applications: an analysis for optimal UX Design",
@@ -37,7 +39,7 @@ class Articles extends StatelessWidget {
                   button: "Read at Dev.to",
                   image: "assets/images/accessibility.PNG",
                   onPressed: () => _launchURL(
-                      "https://dev.to/joo_pimenta_29a8b0e8bb42/accessibility-for-the-elderly-in-mobile-applications-an-analysis-for-optimal-ux-design-550h",
+                      "https://dev.to/joaopimentag/accessibility-for-the-elderly-in-mobile-applications-an-analysis-for-optimal-ux-design-550h",
                       context)),
             ],
           ),
