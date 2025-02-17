@@ -19,9 +19,21 @@ class Articles extends StatelessWidget {
             spacing: 20,
             children: [
               SharedCard(
+                  title:
+                      "Understanding Flutter's Rendering Pipeline: From Widgets to Pixels",
+                  summary:
+                      "Building on the \"Flutter Architecture made it easy\" article, this post will delve into Flutter's Rendering Pipeline, explaining how it works and why understanding it is crucial for developers looking to optimize application performance.",
+                  height: 830,
+                  width: 400,
+                  button: "Read at Dev.to",
+                  image: "assets/images/renderingPipeline.JPG",
+                  onPressed: () => _launchURL(
+                      "https://dev.to/joaopimentag/understanding-flutters-rendering-pipeline-from-widgets-to-pixels-574f",
+                      context)),
+              SharedCard(
                   title: "Flutter Architecture made it easy",
                   summary:
-                      "In this article, I’ll simplify the abstract concept of Flutter’s architecture, making it easy for everyone to understand",
+                      "In this article, I’ll simplify the abstract concept of Flutter’s architecture, making it easy for everyone to understand.",
                   height: 830,
                   width: 400,
                   button: "Read at Dev.to",
