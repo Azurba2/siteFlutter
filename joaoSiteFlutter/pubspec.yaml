@@ -101,6 +101,7 @@ flutter:
     - assets/images/flutterTree.PNG
     - assets/images/flutterRobot.PNG
     - assets/images/renderingPipeline.JPG
+    - assets/images/lifecycle.JPG
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

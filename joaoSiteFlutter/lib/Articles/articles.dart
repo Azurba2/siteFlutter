@@ -20,6 +20,18 @@ class Articles extends StatelessWidget {
             children: [
               SharedCard(
                   title:
+                      "Mastering Flutter Lifecycles: From Application to Render Objects",
+                  summary:
+                      "This article will examine Flutter's lifecycles from the broadest to the most specific, starting with the Application Lifecycle and progressing down to State Object, Element and the RenderObject Lifecycle",
+                  height: 830,
+                  width: 400,
+                  button: "Read at Dev.to",
+                  image: "assets/images/lifecycle.JPG",
+                  onPressed: () => _launchURL(
+                      "https://dev.to/joaopimentag/mastering-flutter-lifecycles-from-application-to-render-objects-3gfd",
+                      context)),
+              SharedCard(
+                  title:
                       "Understanding Flutter's Rendering Pipeline: From Widgets to Pixels",
                   summary:
                       "Building on the \"Flutter Architecture made it easy\" article, this post will delve into Flutter's Rendering Pipeline, explaining how it works and why understanding it is crucial for developers looking to optimize application performance.",
