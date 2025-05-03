@@ -170,7 +170,7 @@ class _AboutMeState extends State<AboutMe> {
                           children: [
                             Flexible(
                               child: Text(
-                                "I am a Full Stack developer with a focus on Web and Mobile software development. My main stack is Flutter, but I have experience in several technologies and tools including React, Angular, C#, SQL, Azure, Docker, and CI/CD. I am able to solve complex problems, review code and design efficient and scalable solutions. In addition, I focus on SOLID and TDD principles to ensure that the code is maintainable and of high quality.",
+                                "I am a Flutter developer with experience in developing for mobile, web, and Windows software development. While my main stack is Flutter,  I have experience in several technologies and tools including Postman, Google Cloud, Jira, Git, React, and Angular. I am able to solve complex problems, review code, perform testing (unit, integration, and widget testing), and design efficient, scalable solutions. In addition, I focus on SOLID and TDD principles to ensure that the code is maintainable and of high quality.",
                                 style: TextStyle(fontSize: 30),
                                 textAlign: TextAlign.justify,
                               ),
@@ -367,7 +367,7 @@ class _AboutMeState extends State<AboutMe> {
                     children: [
                       Flexible(
                         child: Text(
-                          "I am a Full Stack developer with a focus on Web and Mobile software development. My main stack is Flutter, but I have experience in several technologies and tools including React, Angular, C#, SQL, Azure, Docker, and CI/CD. I am able to solve complex problems, review code and design efficient and scalable solutions. In addition, I focus on SOLID and TDD principles to ensure that the code is maintainable and of high quality.",
+                          "I am a Flutter developer with experience in developing for mobile, web, and Windows software development. While my main stack is Flutter,  I have experience in several technologies and tools including Postman, Google Cloud, Jira, Git, React, and Angular. I am able to solve complex problems, review code, perform testing (unit, integration, and widget testing), and design efficient, scalable solutions. In addition, I focus on SOLID and TDD principles to ensure that the code is maintainable and of high quality.",
                           style: AppTextStyles.normalMobileBlack,
                           textAlign: TextAlign.justify,
                         ),

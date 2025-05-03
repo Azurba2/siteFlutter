@@ -20,6 +20,18 @@ class Articles extends StatelessWidget {
             children: [
               SharedCard(
                   title:
+                      "Demystifying Flutter Layout System: Constraints, Sizing, and Overflow Management",
+                  summary:
+                      "Flutter's layout system is built around a fundamental principle: constraints flow downward, sizes expand upward, and the parent determines the position. In this post, we will explore the inner workings of Flutter's layout mechanics in detail.",
+                  height: 830,
+                  width: 400,
+                  button: "Read at Dev.to",
+                  image: "assets/images/layout.JPG",
+                  onPressed: () => _launchURL(
+                      "https://dev.to/joaopimentag/demystifying-flutter-layout-system-constraints-sizing-and-overflow-management-450i",
+                      context)),
+              SharedCard(
+                  title:
                       "Mastering Flutter Lifecycles: From Application to Render Objects",
                   summary:
                       "This article will examine Flutter's lifecycles from the broadest to the most specific, starting with the Application Lifecycle and progressing down to State Object, Element and the RenderObject Lifecycle",

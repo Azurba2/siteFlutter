@@ -78,14 +78,12 @@ class Projects extends StatelessWidget {
                       "It's a tool for enhancing the game experience of Magic: The Gathering. It has an intuitive design and never-before-seen features compared to other similar applications.",
                   skills: ammonite,
                   button: "Website",
-                  onPressed: () =>
-                      _launchURL("https://ammonitemtgcompanion.com/", context)),
-              //store: true,
-              //kiosk: true,
+                  onPressed: () => _launchURL(
+                      "https://www.ammonitemtgcompanion.com/", context)),
               SharedCard(
                 height: platform != ScreenSizeEnum.browser ? 680 : 520,
                 width: 400,
-                title: "RJ Digital (Kiosk)",
+                title: "RJ Digital (Kiosk - Windows)",
                 location: "At Diletta Solutions",
                 summary:
                     "Led the development of the RJ Digital kiosk, designed for placement in public areas throughout the state of Rio de Janeiro to facilitate access for all citizens. The kiosk includes most of the features available on the mobile application, with additional integrated scanners, printers, and a fingerprint sensor, allowing users to easily submit documents and receive printed confirmations directly from the kiosk.",
@@ -94,9 +92,9 @@ class Projects extends StatelessWidget {
                 //kiosk: true,
               ),
               SharedCard(
-                height: platform != ScreenSizeEnum.browser ? 680 : 520,
+                height: platform != ScreenSizeEnum.browser ? 715 : 520,
                 width: 400,
-                title: "RJ Digital (App)",
+                title: "RJ Digital (App - Mobile)",
                 location: "At Diletta Solutions",
                 summary:
                     "The app provides more than 2,500 public services to the citizens of Rio de Janeiro, including a scheduling system, form requests, dynamic form filling, and in-app video conferencing between citizens and state representatives. Released on 09/09/24, the app is expected to reach around 5-6 million users and is available for both Android and iOS. It will be expanded and made available in other Brazilian states.",

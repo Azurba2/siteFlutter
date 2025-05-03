@@ -45,6 +45,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               flexibleSpace:
                   screenSize > 1220 ? withLogoStructure() : noLogoStructure()),
         ),
+        //body: Projects(platform: platform),
         body: Builder(
           builder: (context) {
             switch (_selectedButton) {
