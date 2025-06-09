@@ -103,6 +103,8 @@ flutter:
     - assets/images/renderingPipeline.JPG
     - assets/images/lifecycle.JPG
     - assets/images/layout.JPG
+    - assets/images/crop_article.JPG
+    - assets/images/crop_article2.JPG
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

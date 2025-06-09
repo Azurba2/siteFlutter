@@ -20,6 +20,18 @@ class Articles extends StatelessWidget {
             children: [
               SharedCard(
                   title:
+                      "A Simple Automatic Document Cropping in Flutter Using the Canny Edge Detector",
+                  summary:
+                      "This article presents an efficient method for automatic document cropping in mobile and Windows applications. The strategy leverages the multi-stage Canny Edge Detection algorithm to accurately identify document boundaries.",
+                  height: 830,
+                  width: 400,
+                  button: "Read at Dev.to",
+                  image: "assets/images/crop_article2.JPG",
+                  onPressed: () => _launchURL(
+                      "https://dev.to/joaopimentag/a-simple-automatic-document-cropping-in-flutter-using-the-canny-edge-detector-17d4",
+                      context)),
+              SharedCard(
+                  title:
                       "Demystifying Flutter Layout System: Constraints, Sizing, and Overflow Management",
                   summary:
                       "Flutter's layout system is built around a fundamental principle: constraints flow downward, sizes expand upward, and the parent determines the position. In this post, we will explore the inner workings of Flutter's layout mechanics in detail.",
