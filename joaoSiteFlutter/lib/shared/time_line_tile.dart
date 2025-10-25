@@ -21,11 +21,10 @@ class TimeLineTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 200,
-        width: 300,
+        height: 100,
         //color: Colors.blue,
         child: TimelineTile(
-            axis: TimelineAxis.horizontal,
+            axis: TimelineAxis.vertical,
             isFirst: isFirst,
             isLast: isLast,
             beforeLineStyle: LineStyle(

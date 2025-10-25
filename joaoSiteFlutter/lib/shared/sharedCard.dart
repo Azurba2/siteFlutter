@@ -7,10 +7,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:joao_site_flutter/consts/colors.dart';
 import 'package:joao_site_flutter/consts/image_paths.dart';
 import 'package:joao_site_flutter/dto/experience_skill_dto.dart';
+import 'package:joao_site_flutter/shared/time_line_tile.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SharedCard extends StatelessWidget {
   final String title;
+  final String? logo;
   final String summary;
   final double height;
   final double width;
@@ -24,6 +26,7 @@ class SharedCard extends StatelessWidget {
   final String? award;
   final bool? store;
   final bool? kiosk;
+  final List<TimeLineTile>? timeLine;
 
   const SharedCard({
     Key? key,
@@ -31,6 +34,8 @@ class SharedCard extends StatelessWidget {
     required this.summary,
     required this.height,
     required this.width,
+    this.logo,
+    this.timeLine,
     this.skills,
     this.date,
     this.button,
@@ -91,6 +96,22 @@ class SharedCard extends StatelessWidget {
                       ),
                       textAlign: TextAlign.justify,
                     ),
+                    if (logo != null) ...[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ClipRRect(
+                            child: Image.asset(
+                              logo!,
+                              height: 40,
+                              width: 40,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                    const SizedBox(height: 15),
+                    if (timeLine != null) ...[...timeLine!],
                     if (location != null) ...[
                       Text(
                         location!,

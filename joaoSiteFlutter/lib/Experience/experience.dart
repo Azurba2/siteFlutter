@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:joao_site_flutter/consts/image_paths.dart';
 import 'package:joao_site_flutter/dto/experience_skill_dto.dart';
 import 'package:joao_site_flutter/shared/screen_sizes_enum.dart';
 import 'package:joao_site_flutter/shared/sharedCard.dart';
@@ -46,72 +47,122 @@ class Experience extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
         child: Column(
           children: [
-            platform == ScreenSizeEnum.browser
-                ? Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      TimeLineTile(
-                        isFirst: true,
-                        isLast: false,
-                        isPast: true,
-                        child: const TimeLineCard(
-                          title: "Diletta Solutions",
-                          position: "assets/images/diletta.jpg",
-                          date: "Summer 2019",
-                        ),
-                      ),
-                      TimeLineTile(
-                        isFirst: false,
-                        isLast: false,
-                        isPast: true,
-                        child: const TimeLineCard(
-                          title: "Colorado State University",
-                          position: "assets/images/csu.png",
-                          date: "Jan 2019 - Dez 2022",
-                        ),
-                      ),
-                      TimeLineTile(
-                        isFirst: false,
-                        isLast: false,
-                        isPast: true,
-                        child: const TimeLineCard(
-                          title: "Antra Inc",
-                          position: "assets/images/antra.JPG",
-                          date: "Jan 2023 - Oct 2023",
-                        ),
-                      ),
-                      TimeLineTile(
-                        isFirst: false,
-                        isLast: true,
-                        isPast: false,
-                        child: const TimeLineCard(
-                          title: "Diletta Solutions",
-                          position: "assets/images/diletta.jpg",
-                          date: "Oct 2023 - Current",
-                        ),
-                      ),
-                    ],
-                  )
-                : Container(),
+            // platform == ScreenSizeEnum.browser
+            //     ? Row(
+            //         mainAxisAlignment: MainAxisAlignment.center,
+            //         crossAxisAlignment: CrossAxisAlignment.center,
+            //         children: [
+            //           TimeLineTile(
+            //             isFirst: true,
+            //             isLast: false,
+            //             isPast: true,
+            //             child: const TimeLineCard(
+            //               title: "Diletta Solutions",
+            //               position: "assets/images/diletta.jpg",
+            //               date: "Summer 2019",
+            //             ),
+            //           ),
+            //           TimeLineTile(
+            //             isFirst: false,
+            //             isLast: false,
+            //             isPast: true,
+            //             child: const TimeLineCard(
+            //               title: "Colorado State University",
+            //               position: "assets/images/csu.png",
+            //               date: "Jan 2019 - Dez 2022",
+            //             ),
+            //           ),
+            //           TimeLineTile(
+            //             isFirst: false,
+            //             isLast: false,
+            //             isPast: true,
+            //             child: const TimeLineCard(
+            //               title: "Antra Inc",
+            //               position: "assets/images/antra.JPG",
+            //               date: "Jan 2023 - Oct 2023",
+            //             ),
+            //           ),
+            //           TimeLineTile(
+            //             isFirst: false,
+            //             isLast: true,
+            //             isPast: false,
+            //             child: const TimeLineCard(
+            //               title: "Diletta Solutions",
+            //               position: "assets/images/diletta.jpg",
+            //               date: "Oct 2023 - Current",
+            //             ),
+            //           ),
+            //         ],
+            //       )
+            //     : Container(),
             Center(
               child: Wrap(
                 children: [
                   SharedCard(
-                    height: platform == ScreenSizeEnum.browser ? 510 : 630,
+                    height: platform == ScreenSizeEnum.browser ? 590 : 630,
                     width: 400,
+                    logo: Paths.diletta,
                     date: platform == ScreenSizeEnum.browser
                         ? ""
                         : "Oct 2023 - Current",
+                    timeLine: platform == ScreenSizeEnum.browser
+                        ? [
+                            TimeLineTile(
+                                isFirst: true,
+                                isLast: false,
+                                isPast: false,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Mid-Level Software Developer",
+                                      style: const TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text("Nov 2025 - Current"),
+                                  ],
+                                )),
+                            TimeLineTile(
+                                isFirst: false,
+                                isLast: true,
+                                isPast: true,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Junior Software Developer",
+                                      style: const TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text("Oct 2023 - Nov 2025"),
+                                  ],
+                                )),
+                          ]
+                        : null,
                     title: "Diletta Solutions",
-                    position: "Software Developer",
+                    position: platform == ScreenSizeEnum.browser
+                        ? null
+                        : "Mid-Level Mobile Developer",
                     summary:
                         "I work as a Flutter software developer in an agile team using Bitbucket and Jira for efficient collaboration and development. My focus is to craft responsive, dynamic and efficient mobile applications.",
                     skills: diletta,
                   ),
                   SharedCard(
-                    height: platform == ScreenSizeEnum.browser ? 510 : 630,
+                    height: platform == ScreenSizeEnum.browser ? 590 : 630,
                     width: 400,
+                    logo: Paths.antra,
                     date: platform == ScreenSizeEnum.browser
                         ? ""
                         : "Jan 2023 - Oct 2023",
@@ -122,8 +173,9 @@ class Experience extends StatelessWidget {
                     skills: antra,
                   ),
                   SharedCard(
-                    height: platform == ScreenSizeEnum.browser ? 510 : 630,
+                    height: platform == ScreenSizeEnum.browser ? 590 : 630,
                     width: 400,
+                    logo: Paths.csu,
                     date: platform == ScreenSizeEnum.browser
                         ? ""
                         : "Jan 2019 - Dez 2022",
@@ -134,8 +186,9 @@ class Experience extends StatelessWidget {
                     skills: csu,
                   ),
                   SharedCard(
-                    height: platform == ScreenSizeEnum.browser ? 510 : 630,
+                    height: platform == ScreenSizeEnum.browser ? 590 : 630,
                     width: 400,
+                    logo: Paths.diletta,
                     date: platform == ScreenSizeEnum.browser
                         ? ""
                         : "Jun 2019 - Aug 2019",

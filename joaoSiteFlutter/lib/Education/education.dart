@@ -19,66 +19,66 @@ class Education extends StatelessWidget {
           children: [
             Column(
               children: [
-                platform == ScreenSizeEnum.browser
-                    ? Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          TimeLineTile(
-                            isFirst: true,
-                            isLast: false,
-                            isPast: true,
-                            child: const TimeLineCard(
-                              title: "PUC - Campinas",
-                              position: "assets/images/puclogo.png",
-                              date: "2011 - 2014",
-                            ),
-                          ),
-                          TimeLineTile(
-                            isFirst: false,
-                            isLast: false,
-                            isPast: true,
-                            child: const TimeLineCard(
-                              title: "Universidade de São Paulo",
-                              position: "assets/images/usplogo.png",
-                              date: "2015 - 2017",
-                            ),
-                          ),
-                          TimeLineTile(
-                            isFirst: false,
-                            isLast: true,
-                            isPast: true,
-                            child: const TimeLineCard(
-                              title: "Colorado State University",
-                              position: "assets/images/csu.png",
-                              date: "2018 - 2022",
-                            ),
-                          ),
-                        ],
-                      )
-                    : Container(),
+                // platform == ScreenSizeEnum.browser
+                //     ? Row(
+                //         mainAxisAlignment: MainAxisAlignment.center,
+                //         crossAxisAlignment: CrossAxisAlignment.center,
+                //         children: [
+                //           TimeLineTile(
+                //             isFirst: true,
+                //             isLast: false,
+                //             isPast: true,
+                //             child: const TimeLineCard(
+                //               title: "PUC - Campinas",
+                //               position: "assets/images/puclogo.png",
+                //               date: "2011 - 2014",
+                //             ),
+                //           ),
+                //           TimeLineTile(
+                //             isFirst: false,
+                //             isLast: false,
+                //             isPast: true,
+                //             child: const TimeLineCard(
+                //               title: "Universidade de São Paulo",
+                //               position: "assets/images/usplogo.png",
+                //               date: "2015 - 2017",
+                //             ),
+                //           ),
+                //           TimeLineTile(
+                //             isFirst: false,
+                //             isLast: true,
+                //             isPast: true,
+                //             child: const TimeLineCard(
+                //               title: "Colorado State University",
+                //               position: "assets/images/csu.png",
+                //               date: "2018 - 2022",
+                //             ),
+                //           ),
+                //         ],
+                //       )
+                //     : Container(),
                 Center(
                   child: Wrap(children: [
-                    SharedCard(
-                      height: platform == ScreenSizeEnum.browser ? 500 : 550,
-                      width: 400,
-                      date: platform == ScreenSizeEnum.browser
-                          ? null
-                          : "2011 - 2014",
-                      image: "assets/images/puc.JPG",
-                      title: "PUC - Campinas",
-                      summary: "Bachelor in Biology",
-                    ),
-                    SharedCard(
-                      height: platform == ScreenSizeEnum.browser ? 500 : 550,
-                      width: 400,
-                      date: platform == ScreenSizeEnum.browser
-                          ? null
-                          : "2015 - 2017",
-                      image: "assets/images/usp.JPG",
-                      title: "Universidade de São Paulo",
-                      summary: "Master's in Microbiology",
-                    ),
+                    // SharedCard(
+                    //   height: platform == ScreenSizeEnum.browser ? 500 : 550,
+                    //   width: 400,
+                    //   date: platform == ScreenSizeEnum.browser
+                    //       ? null
+                    //       : "2011 - 2014",
+                    //   image: "assets/images/puc.JPG",
+                    //   title: "PUC - Campinas",
+                    //   summary: "Bachelor in Biology",
+                    // ),
+                    // SharedCard(
+                    //   height: platform == ScreenSizeEnum.browser ? 500 : 550,
+                    //   width: 400,
+                    //   date: platform == ScreenSizeEnum.browser
+                    //       ? null
+                    //       : "2015 - 2017",
+                    //   image: "assets/images/usp.JPG",
+                    //   title: "Universidade de São Paulo",
+                    //   summary: "Master's in Microbiology",
+                    // ),
                     SharedCard(
                       height: platform == ScreenSizeEnum.browser ? 500 : 550,
                       width: 400,
