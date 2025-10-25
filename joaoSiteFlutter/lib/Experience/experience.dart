@@ -163,9 +163,7 @@ class Experience extends StatelessWidget {
                     height: platform == ScreenSizeEnum.browser ? 590 : 630,
                     width: 400,
                     logo: Paths.antra,
-                    date: platform == ScreenSizeEnum.browser
-                        ? ""
-                        : "Jan 2023 - Oct 2023",
+                    date: "Jan 2023 - Oct 2023",
                     title: "Antra Inc",
                     position: "Full Stack Software Developer",
                     summary:
@@ -237,9 +235,7 @@ class Experience extends StatelessWidget {
                     height: platform == ScreenSizeEnum.browser ? 590 : 630,
                     width: 400,
                     logo: Paths.diletta,
-                    date: platform == ScreenSizeEnum.browser
-                        ? ""
-                        : "Jun 2019 - Aug 2019",
+                    date: "Jun 2019 - Aug 2019",
                     title: "Diletta Solutions",
                     position: "Software Developer Intern",
                     summary:
