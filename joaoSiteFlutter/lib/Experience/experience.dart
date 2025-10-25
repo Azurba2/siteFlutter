@@ -99,7 +99,7 @@ class Experience extends StatelessWidget {
               child: Wrap(
                 children: [
                   SharedCard(
-                    height: platform == ScreenSizeEnum.browser ? 590 : 630,
+                    height: platform == ScreenSizeEnum.browser ? 780 : 630,
                     width: 400,
                     logo: Paths.diletta,
                     date: platform == ScreenSizeEnum.browser
@@ -115,7 +115,7 @@ class Experience extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "Mid-Level Software Developer",
+                                      "Mid-Level Mobile Developer",
                                       style: const TextStyle(
                                         fontSize: 20,
                                         color: Colors.black,
@@ -123,7 +123,7 @@ class Experience extends StatelessWidget {
                                       ),
                                     ),
                                     SizedBox(
-                                      height: 10,
+                                      height: 15,
                                     ),
                                     Text("Nov 2025 - Current"),
                                   ],
@@ -156,7 +156,7 @@ class Experience extends StatelessWidget {
                         ? null
                         : "Mid-Level Mobile Developer",
                     summary:
-                        "I work as a Flutter software developer in an agile team using Bitbucket and Jira for efficient collaboration and development. My focus is to craft responsive, dynamic and efficient mobile applications.",
+                        "Our team develops a white-label e-government solution platform for both mobile (iOS/Android) and kiosk (Windows/Linux) applications. We have successfully deployed this platform for major public services, including Rj Digital and Poupatempo Paraná. The kiosk system features complex hardware integration—including scanners, printers, and fingerprint readers—along with advanced software features like automatic document cropping and a proprietary WebRTC video call tool that connects citizens directly with state representatives.",
                     skills: diletta,
                   ),
                   SharedCard(
@@ -180,9 +180,57 @@ class Experience extends StatelessWidget {
                         ? ""
                         : "Jan 2019 - Dez 2022",
                     title: "Colorado State University",
-                    position: "Student Supervisor",
+                    timeLine: platform == ScreenSizeEnum.browser
+                        ? [
+                            TimeLineTile(
+                                isFirst: true,
+                                isLast: false,
+                                isPast: true,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Student Supervisor",
+                                      style: const TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text("Nov 2021 - Dez 2022"),
+                                  ],
+                                )),
+                            TimeLineTile(
+                                isFirst: false,
+                                isLast: true,
+                                isPast: true,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Student Employee",
+                                      style: const TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text("Fev 2019 - Nov 2021"),
+                                  ],
+                                )),
+                          ]
+                        : null,
+                    position: platform == ScreenSizeEnum.browser
+                        ? null
+                        : "Student Supervisor",
                     summary:
-                        "Worked on Colorado State University’s dining hall, Braiden Dining hall as a part time job. As a supervisor I was responsible for training new employees and act as a shift supervisor for a crew of up to 25 members. The dining hall served between 700–1500 customer and students daily.",
+                        "Worked on CSU’s dining hall, Braiden Dining hall as a part time job. As a supervisor I was responsible for training new employees and act as a shift supervisor for a crew of up to 25 members.",
                     skills: csu,
                   ),
                   SharedCard(

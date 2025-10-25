@@ -110,7 +110,7 @@ class SharedCard extends StatelessWidget {
                         ],
                       ),
                     ],
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 10),
                     if (timeLine != null) ...[...timeLine!],
                     if (location != null) ...[
                       Text(
@@ -124,7 +124,7 @@ class SharedCard extends StatelessWidget {
                       )
                     ],
                     if (position != null) ...[
-                      const SizedBox(height: 15),
+                      const SizedBox(height: 10),
                       Text(
                         position!,
                         style: const TextStyle(
@@ -135,7 +135,7 @@ class SharedCard extends StatelessWidget {
                         textAlign: TextAlign.justify,
                       ),
                     ],
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 10),
                     Text(
                       summary,
                       style: const TextStyle(
@@ -144,7 +144,7 @@ class SharedCard extends StatelessWidget {
                       ),
                       textAlign: TextAlign.justify,
                     ),
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 10),
                     if (skills != null)
                       Wrap(
                         alignment: WrapAlignment.center,
