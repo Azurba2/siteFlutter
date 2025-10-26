@@ -28,4 +28,13 @@ class Paths {
   static const String googlePlay = "assets/images/google-play-badge.png";
   static const String appStore = "assets/images/app-store.svg";
   static const String microsoftStore = "assets/images/microsoftGet.png";
+  static const String brazilFlag = "assets/images/Flag_of_Brazil.png";
+  static const String usFlag = "assets/images/Flag_of_the_United_States.png";
+  static const String ratinho = "assets/images/fotoRatinhoJr.jpg";
+  static const String meiodia1 = "assets/images/meiodia1.jpg";
+  static const String jornale = "assets/images/jornale.jpg";
+  static const String rjdigital1 = "assets/images/rjdigital1.jpg";
+  static const String rjdigital2 = "assets/images/rjdigital2.jpg";
+  static const String rjdigital3 = "assets/images/rjdigital3.jpg";
+  static const String usflag = "assets/images/usflag.png";
 }

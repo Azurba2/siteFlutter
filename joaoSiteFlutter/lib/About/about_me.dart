@@ -229,8 +229,7 @@ class _AboutMeState extends State<AboutMe> {
                                         SizedBox(
                                           height: 40,
                                           width: 40,
-                                          child: Image.asset(
-                                              "assets/images/Flag_of_the_United_States.png"),
+                                          child: Image.asset(Paths.usFlag),
                                         ),
                                         const SizedBox(height: 5),
                                         const Text(
@@ -264,8 +263,7 @@ class _AboutMeState extends State<AboutMe> {
                                         SizedBox(
                                           height: 40,
                                           width: 40,
-                                          child: Image.asset(
-                                              "assets/images/Flag_of_Brazil.png"),
+                                          child: Image.asset(Paths.brazilFlag),
                                         ),
                                         const SizedBox(height: 5),
                                         const Text(

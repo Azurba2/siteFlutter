@@ -78,8 +78,8 @@ class Projects extends StatelessWidget {
                       "It's a tool for enhancing the game experience of Magic: The Gathering. It has an intuitive design and never-before-seen features compared to other similar applications.",
                   skills: ammonite,
                   button: "Website",
-                  onPressed: () => _launchURL(
-                      "https://www.ammonitemtgcompanion.com/", context)),
+                  onPressed: () =>
+                      _launchURL("https://ammonitemtgcompanion.com/", context)),
               SharedCard(
                 height: platform != ScreenSizeEnum.browser ? 680 : 520,
                 width: 400,

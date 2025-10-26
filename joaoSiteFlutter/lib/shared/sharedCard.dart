@@ -12,6 +12,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class SharedCard extends StatelessWidget {
   final String title;
+  final String? subtitle;
   final String? logo;
   final String summary;
   final double height;
@@ -19,6 +20,8 @@ class SharedCard extends StatelessWidget {
   final List<ExperienceSkillDto>? skills;
   final String? date;
   final String? button;
+  final List<String>? buttonTitleList;
+  final List<Function>? buttonOnPressedList;
   final String? image;
   final String? position;
   final String? location;
@@ -34,11 +37,14 @@ class SharedCard extends StatelessWidget {
     required this.summary,
     required this.height,
     required this.width,
+    this.subtitle,
     this.logo,
     this.timeLine,
     this.skills,
     this.date,
     this.button,
+    this.buttonTitleList,
+    this.buttonOnPressedList,
     this.image,
     this.position,
     this.location,
@@ -94,8 +100,18 @@ class SharedCard extends StatelessWidget {
                         fontSize: 25,
                         color: ColorPalette.regularGreen,
                       ),
-                      textAlign: TextAlign.justify,
+                      textAlign: TextAlign.center,
                     ),
+                    if (subtitle != null) ...[
+                      Text(
+                        subtitle!,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          color: Colors.grey,
+                        ),
+                        textAlign: TextAlign.justify,
+                      ),
+                    ],
                     if (logo != null) ...[
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -203,6 +219,40 @@ class SharedCard extends StatelessWidget {
                           ),
                         ),
                       ),
+                    ],
+                    if (buttonTitleList != null &&
+                        buttonTitleList!.isNotEmpty &&
+                        buttonOnPressedList != null &&
+                        buttonOnPressedList!.length ==
+                            buttonTitleList!.length) ...[
+                      ...List.generate(buttonTitleList!.length, (index) {
+                        final String buttonTitle = buttonTitleList![index];
+                        final Function onPressed = buttonOnPressedList![index];
+
+                        return ElevatedButton(
+                          onPressed: () => onPressed(),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: ColorPalette.regularGreen,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 12,
+                              horizontal: 20,
+                            ),
+                            child: Text(
+                              buttonTitle,
+                              style: const TextStyle(
+                                fontSize: 15,
+                                color: Colors.white,
+                              ),
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                        );
+                      }),
                     ],
                     if (award != null) ...[
                       const SizedBox(height: 15),

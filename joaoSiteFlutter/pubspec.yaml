@@ -105,6 +105,13 @@ flutter:
     - assets/images/layout.JPG
     - assets/images/crop_article.JPG
     - assets/images/crop_article2.JPG
+    - assets/images/fotoRatinhoJr.jpg
+    - assets/images/meiodia1.jpg
+    - assets/images/jornale.jpg
+    - assets/images/rjdigital1.jpg
+    - assets/images/rjdigital2.jpg
+    - assets/images/rjdigital3.jpg
+    - assets/images/usflag.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

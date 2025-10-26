@@ -99,7 +99,7 @@ class Experience extends StatelessWidget {
               child: Wrap(
                 children: [
                   SharedCard(
-                    height: platform == ScreenSizeEnum.browser ? 780 : 630,
+                    height: platform == ScreenSizeEnum.browser ? 780 : 850,
                     width: 400,
                     logo: Paths.diletta,
                     date: platform == ScreenSizeEnum.browser
@@ -160,7 +160,7 @@ class Experience extends StatelessWidget {
                     skills: diletta,
                   ),
                   SharedCard(
-                    height: platform == ScreenSizeEnum.browser ? 590 : 630,
+                    height: platform == ScreenSizeEnum.browser ? 590 : 670,
                     width: 400,
                     logo: Paths.antra,
                     date: "Jan 2023 - Oct 2023",
