@@ -81,29 +81,29 @@ class Projects extends StatelessWidget {
                   onPressed: () =>
                       _launchURL("https://ammonitemtgcompanion.com/", context)),
               SharedCard(
-                height: platform != ScreenSizeEnum.browser ? 680 : 520,
+                height: platform != ScreenSizeEnum.browser ? 800 : 620,
                 width: 400,
-                title: "RJ Digital (Kiosk - Windows)",
+                title: "E-Government App \n(Kiosk - Windows/Linux)",
                 location: "At Diletta Solutions",
                 summary:
-                    "Led the development of the RJ Digital kiosk, designed for placement in public areas throughout the state of Rio de Janeiro to facilitate access for all citizens. The kiosk includes most of the features available on the mobile application, with additional integrated scanners, printers, and a fingerprint sensor, allowing users to easily submit documents and receive printed confirmations directly from the kiosk.",
+                    "Currently working on a white-label e-government solution for a kiosk platform kiosk (Windows/Linux) application. We have successfully deployed this platform for major public services, including Rj Digital and Poupatempo Paraná. The kiosk system features complex hardware integration—including scanners, printers, and fingerprint readers—along with advanced software features like automatic document cropping and a proprietary WebRTC video call tool that connects citizens directly with state representatives.",
                 skills: rjDigital,
                 //store: true,
                 //kiosk: true,
               ),
               SharedCard(
-                height: platform != ScreenSizeEnum.browser ? 715 : 520,
+                height: platform != ScreenSizeEnum.browser ? 800 : 620,
                 width: 400,
-                title: "RJ Digital (App - Mobile)",
+                title: "E-Government App \n(Mobile - iOS/Android)",
                 location: "At Diletta Solutions",
                 summary:
-                    "The app provides more than 2,500 public services to the citizens of Rio de Janeiro, including a scheduling system, form requests, dynamic form filling, and in-app video conferencing between citizens and state representatives. Released on 09/09/24, the app is expected to reach around 5-6 million users and is available for both Android and iOS. It will be expanded and made available in other Brazilian states.",
+                    "Currently working on a white-label e-government solution for a mobile (iOS/Android) application with more than 150,000 downloads so far. We have successfully deployed this platform for major public services, including Rj Digital and Poupatempo Paraná. The app provides more than 2,500 public services to the citizens of Rio de Janeiro, including a scheduling system, form requests, dynamic form filling, and in-app video conferencing between citizens and state representatives.",
                 skills: rjDigital,
                 store: true,
                 kiosk: false,
               ),
               SharedCard(
-                  height: platform != ScreenSizeEnum.browser ? 600 : 520,
+                  height: platform != ScreenSizeEnum.browser ? 690 : 520,
                   width: 400,
                   title: "Human Resource Management System",
                   location: "At Antra Inc",
