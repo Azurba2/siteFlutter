@@ -212,7 +212,7 @@ class _AboutMeState extends State<AboutMe> {
                                   ElevatedButton(
                                     onPressed: () {
                                       _launchURL(
-                                          'https://1drv.ms/w/s!Aq_4EhaJUcWMj-tzlorOXjGy5ZyfBQ?e=Z9rfJm',
+                                          'https://1drv.ms/b/c/8cc551891612f8af/EZOlMCEAOwtCr3QA1l3D-1wBe36TDC1U8yM_DHpv1sWjIA?e=wOe75s',
                                           context);
                                     },
                                     style: ElevatedButton.styleFrom(
@@ -246,7 +246,7 @@ class _AboutMeState extends State<AboutMe> {
                                   ElevatedButton(
                                     onPressed: () {
                                       _launchURL(
-                                          "https://1drv.ms/w/s!Aq_4EhaJUcWMj-txtfOua4yplzo22g?e=xxGkPv",
+                                          "https://1drv.ms/b/c/8cc551891612f8af/EQXzyKhUyutFgfJze40u1jIBefHLs-rBqVlRFAzoiA68ow?e=WxHvBT",
                                           context);
                                     },
                                     style: ElevatedButton.styleFrom(
