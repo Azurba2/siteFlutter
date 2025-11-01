@@ -99,12 +99,13 @@ class Experience extends StatelessWidget {
               child: Wrap(
                 children: [
                   SharedCard(
-                    height: platform == ScreenSizeEnum.browser ? 780 : 850,
+                    height: platform == ScreenSizeEnum.browser ? 720 : 850,
                     width: 400,
                     logo: Paths.diletta,
-                    date: platform == ScreenSizeEnum.browser
-                        ? ""
-                        : "Oct 2023 - Current",
+                    // date: platform == ScreenSizeEnum.browser
+                    //     ? ""
+                    //     : "Oct 2023 - Current",
+                    date: "Oct 2023 - Current",
                     position: "Software Developer",
                     title: "Diletta Solutions",
                     // timeLine: platform == ScreenSizeEnum.browser
@@ -161,7 +162,7 @@ class Experience extends StatelessWidget {
                     skills: diletta,
                   ),
                   SharedCard(
-                    height: platform == ScreenSizeEnum.browser ? 590 : 670,
+                    height: platform == ScreenSizeEnum.browser ? 720 : 850,
                     width: 400,
                     logo: Paths.antra,
                     date: "Jan 2023 - Oct 2023",
@@ -172,7 +173,7 @@ class Experience extends StatelessWidget {
                     skills: antra,
                   ),
                   SharedCard(
-                    height: platform == ScreenSizeEnum.browser ? 590 : 630,
+                    height: platform == ScreenSizeEnum.browser ? 720 : 850,
                     width: 400,
                     logo: Paths.csu,
                     date: platform == ScreenSizeEnum.browser
@@ -229,11 +230,11 @@ class Experience extends StatelessWidget {
                         ? null
                         : "Student Supervisor",
                     summary:
-                        "Worked on CSU’s dining hall, Braiden Dining hall as a part time job. As a supervisor I was responsible for training new employees and act as a shift supervisor for a crew of up to 25 members.",
+                        "Worked on CSU’s dining hall (Braiden Dining hall) as a part time job. I played a key role in managing daily high-volume food service operations. I was directly responsible for the leadership and management of a diverse team of up to 25 employees per shift as well as training and mentoring of all new hires to ensure adherence to quality standards and safety protocols. The dining hall serves between 600-1500 customers daily.",
                     skills: csu,
                   ),
                   SharedCard(
-                    height: platform == ScreenSizeEnum.browser ? 590 : 630,
+                    height: platform == ScreenSizeEnum.browser ? 720 : 850,
                     width: 400,
                     logo: Paths.diletta,
                     date: "Jun 2019 - Aug 2019",

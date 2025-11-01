@@ -27,12 +27,10 @@ class Projects extends StatelessWidget {
     ExperienceSkillDto(path: Paths.sql, name: "SQL"),
   ];
   final List<ExperienceSkillDto> wheelix = [
-    ExperienceSkillDto(path: Paths.net, name: ".NET"),
     ExperienceSkillDto(path: Paths.angular, name: "Angular"),
     ExperienceSkillDto(path: Paths.sql, name: "SQL"),
   ];
   final List<ExperienceSkillDto> abruza = [
-    ExperienceSkillDto(path: Paths.net, name: ".NET"),
     ExperienceSkillDto(path: Paths.angular, name: "Angular"),
     ExperienceSkillDto(path: Paths.sql, name: "SQL"),
   ];
@@ -40,9 +38,7 @@ class Projects extends StatelessWidget {
     ExperienceSkillDto(path: Paths.angular, name: "Angular"),
   ];
   final List<ExperienceSkillDto> ana = [
-    ExperienceSkillDto(path: Paths.net, name: ".NET"),
-    ExperienceSkillDto(path: Paths.angular, name: "Angular"),
-    ExperienceSkillDto(path: Paths.firebase, name: "Firebase"),
+    ExperienceSkillDto(path: Paths.flutter, name: "Flutter"),
   ];
   final List<ExperienceSkillDto> kingOopers = [
     ExperienceSkillDto(path: Paths.flutter, name: "Flutter"),
@@ -70,18 +66,18 @@ class Projects extends StatelessWidget {
             spacing: 20,
             children: [
               SharedCard(
-                  height: platform != ScreenSizeEnum.browser ? 680 : 520,
+                  height: 700,
                   width: 400,
                   title: "Ammonite MTG Companion",
                   location: "Personal Project",
                   summary:
-                      "It's a tool for enhancing the game experience of Magic: The Gathering. It has an intuitive design and never-before-seen features compared to other similar applications.",
+                      "This application is the ultimate tool for fundamentally enhancing Magic: The Gathering experience. It pairs an intuitive design with never-before-seen features whe compared to other similar. By integrating the official Wizards of the Coast API (Scryfall), the app has the entire card database at its disposal. This deep integration allows players to effortlessly create tokens, search cards, and reference rulings directly within the app, all while the game is actively being played.",
                   skills: ammonite,
                   button: "Website",
                   onPressed: () =>
                       _launchURL("https://ammonitemtgcompanion.com/", context)),
               SharedCard(
-                height: platform != ScreenSizeEnum.browser ? 800 : 620,
+                height: platform != ScreenSizeEnum.browser ? 800 : 700,
                 width: 400,
                 title: "E-Government App \n(Kiosk - Windows/Linux)",
                 location: "At Diletta Solutions",
@@ -92,23 +88,23 @@ class Projects extends StatelessWidget {
                 //kiosk: true,
               ),
               SharedCard(
-                height: platform != ScreenSizeEnum.browser ? 800 : 700,
+                height: platform != ScreenSizeEnum.browser ? 900 : 700,
                 width: 400,
                 title: "E-Government App \n(Mobile - iOS/Android)",
                 location: "At Diletta Solutions",
                 summary:
-                    "Currently working on a white-label e-government solution for a mobile (iOS/Android) application with more than 150,000 downloads so far. We have successfully deployed this platform for major public services, including Rj Digital and Poupatempo Paraná. The app provides more than 2,500 public services to the citizens of Rio de Janeiro, including a scheduling system, form requests, dynamic form filling, and in-app video conferencing between citizens and state representatives.",
+                    "Currently working on a white-label e-government solution for a mobile (iOS/Android) application with more than 150,000 downloads so far. We have successfully deployed this platform for major public services, including Rj Digital and Poupatempo Paraná. The app provides many features including a scheduling system, form requests, dynamic form filling, in-app video conferencing between citizens and state representatives, document optical character recognition and many more.",
                 skills: rjDigital,
                 store: true,
                 kiosk: false,
               ),
               SharedCard(
-                  height: platform != ScreenSizeEnum.browser ? 690 : 520,
+                  height: platform != ScreenSizeEnum.browser ? 690 : 700,
                   width: 400,
                   title: "Human Resource Management System",
                   location: "At Antra Inc",
                   summary:
-                      "Collaborative contributor in the development of an internal HR app that offered a comprehensive solution for managing employee data and HR processes, such as hiring. The application had many microservices and improved HR department's efficiency by 11%",
+                      "Collaborative contributor in the development of a high-impact, internal Human Resources (HR) application. This solution modernized employee data management and streamlined core HR processes, including the entire hiring workflow. The application was built on an efficient microservices architecture and delivered a measurable return, directly boosting the HR department's overall efficiency by 11%.",
                   skills: hrm),
               SharedCard(
                   height: platform != ScreenSizeEnum.browser ? 600 : 520,
@@ -177,18 +173,18 @@ class Projects extends StatelessWidget {
                   button: "Github",
                   onPressed: () => _launchURL(
                       "https://github.com/Azurba/T10-Map-App", context)),
-              SharedCard(
-                  height: platform != ScreenSizeEnum.browser ? 600 : 520,
-                  width: 400,
-                  title: "Azurba MTG Player Panel",
-                  location: "Personal Project",
-                  summary:
-                      "At a glance, this mobile application was designed specifically for assisting players to play Magic The Gathering.",
-                  skills: azurba,
-                  button: "Github",
-                  onPressed: () => _launchURL(
-                      "https://github.com/Azurba/Azurba-s_MTG_Player_Panel",
-                      context)),
+              // SharedCard(
+              //     height: platform != ScreenSizeEnum.browser ? 600 : 520,
+              //     width: 400,
+              //     title: "Azurba MTG Player Panel",
+              //     location: "Personal Project",
+              //     summary:
+              //         "At a glance, this mobile application was designed specifically for assisting players to play Magic The Gathering.",
+              //     skills: azurba,
+              //     button: "Github",
+              //     onPressed: () => _launchURL(
+              //         "https://github.com/Azurba/Azurba-s_MTG_Player_Panel",
+              //         context)),
               SharedCard(
                   height: platform != ScreenSizeEnum.browser ? 600 : 520,
                   width: 400,
