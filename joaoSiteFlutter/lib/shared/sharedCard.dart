@@ -331,59 +331,118 @@ Widget _skillsContainer(String imagePath, String text, double? size) {
 Widget _storeContainer(bool kiosk) {
   return Column(children: [
     kiosk == false
-        ? Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+        ? Column(
             children: [
-                GestureDetector(
-                  onTap: () async {
-                    final url = Uri.parse(
-                        'https://play.google.com/store/apps/details?id=br.gov.rj.proderj.rjdigital');
-                    if (await canLaunchUrl(url)) {
-                      await launchUrl(url);
-                    } else {
-                      print('Could not launch $url');
-                    }
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: Image.asset(
-                      Paths.googlePlay,
-                      width: 150,
+              Text(
+                "RJ Digital",
+                style: const TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () async {
+                        final url = Uri.parse(
+                            'https://play.google.com/store/apps/details?id=br.gov.rj.proderj.rjdigital');
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url);
+                        } else {
+                          print('Could not launch $url');
+                        }
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(5),
+                        child: Image.asset(
+                          Paths.googlePlay,
+                          width: 150,
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () async {
-                    final url = Uri.parse(
-                        "https://apps.apple.com/app/rj-digital/id1585703556");
-                    if (await canLaunchUrl(url)) {
-                      await launchUrl(url);
-                    } else {
-                      print('Could not launch $url');
-                    }
-                  },
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(5),
-                      child: SvgPicture.asset(
-                        Paths.appStore,
-                      )),
-                ),
-              ])
-        : Container(),
-    kiosk
-        ? Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              ClipRRect(
-                  borderRadius: BorderRadius.circular(5),
-                  child: SizedBox(
-                      height: 45,
-                      width: 140,
-                      child: Image.asset(Paths.microsoftStore))),
+                    GestureDetector(
+                      onTap: () async {
+                        final url = Uri.parse(
+                            "https://apps.apple.com/app/rj-digital/id1585703556");
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url);
+                        } else {
+                          print('Could not launch $url');
+                        }
+                      },
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(5),
+                          child: SvgPicture.asset(
+                            Paths.appStore,
+                          )),
+                    ),
+                  ]),
+              Text(
+                "Poupatempo Paraná",
+                style: const TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () async {
+                        final url = Uri.parse(
+                            'https://play.google.com/store/apps/details?id=br.gov.pr.poupatempo');
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url);
+                        } else {
+                          print('Could not launch $url');
+                        }
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(5),
+                        child: Image.asset(
+                          Paths.googlePlay,
+                          width: 150,
+                        ),
+                      ),
+                    ),
+                    // GestureDetector(
+                    //   onTap: () async {
+                    //     final url = Uri.parse(
+                    //         "https://apps.apple.com/app/rj-digital/id1585703556");
+                    //     if (await canLaunchUrl(url)) {
+                    //       await launchUrl(url);
+                    //     } else {
+                    //       print('Could not launch $url');
+                    //     }
+                    //   },
+                    //   child: ClipRRect(
+                    //       borderRadius: BorderRadius.circular(5),
+                    //       child: SvgPicture.asset(
+                    //         Paths.appStore,
+                    //       )),
+                    // ),
+                  ]),
             ],
           )
-        : Container()
+        : Container(),
+    // kiosk
+    //     ? Row(
+    //         mainAxisAlignment: MainAxisAlignment.center,
+    //         crossAxisAlignment: CrossAxisAlignment.center,
+    //         children: [
+    //           ClipRRect(
+    //               borderRadius: BorderRadius.circular(5),
+    //               child: SizedBox(
+    //                   height: 45,
+    //                   width: 140,
+    //                   child: Image.asset(Paths.microsoftStore))),
+    //         ],
+    //       )
+    //     : Container()
   ]);
 }

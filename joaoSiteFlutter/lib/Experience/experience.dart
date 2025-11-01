@@ -105,56 +105,57 @@ class Experience extends StatelessWidget {
                     date: platform == ScreenSizeEnum.browser
                         ? ""
                         : "Oct 2023 - Current",
-                    timeLine: platform == ScreenSizeEnum.browser
-                        ? [
-                            TimeLineTile(
-                                isFirst: true,
-                                isLast: false,
-                                isPast: false,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Mid-Level Mobile Developer",
-                                      style: const TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 15,
-                                    ),
-                                    Text("Nov 2025 - Current"),
-                                  ],
-                                )),
-                            TimeLineTile(
-                                isFirst: false,
-                                isLast: true,
-                                isPast: true,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Junior Software Developer",
-                                      style: const TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Text("Oct 2023 - Nov 2025"),
-                                  ],
-                                )),
-                          ]
-                        : null,
+                    position: "Software Developer",
                     title: "Diletta Solutions",
-                    position: platform == ScreenSizeEnum.browser
-                        ? null
-                        : "Mid-Level Mobile Developer",
+                    // timeLine: platform == ScreenSizeEnum.browser
+                    //     ? [
+                    //         TimeLineTile(
+                    //             isFirst: true,
+                    //             isLast: false,
+                    //             isPast: false,
+                    //             child: Column(
+                    //               mainAxisAlignment: MainAxisAlignment.center,
+                    //               children: [
+                    //                 Text(
+                    //                   "Mid-Level Mobile Developer",
+                    //                   style: const TextStyle(
+                    //                     fontSize: 20,
+                    //                     color: Colors.black,
+                    //                     fontWeight: FontWeight.bold,
+                    //                   ),
+                    //                 ),
+                    //                 SizedBox(
+                    //                   height: 15,
+                    //                 ),
+                    //                 Text("Nov 2025 - Current"),
+                    //               ],
+                    //             )),
+                    //         TimeLineTile(
+                    //             isFirst: false,
+                    //             isLast: true,
+                    //             isPast: true,
+                    //             child: Column(
+                    //               mainAxisAlignment: MainAxisAlignment.center,
+                    //               children: [
+                    //                 Text(
+                    //                   "Junior Software Developer",
+                    //                   style: const TextStyle(
+                    //                     fontSize: 20,
+                    //                     color: Colors.black,
+                    //                     fontWeight: FontWeight.bold,
+                    //                   ),
+                    //                 ),
+                    //                 SizedBox(
+                    //                   height: 10,
+                    //                 ),
+                    //                 Text("Oct 2023 - Nov 2025"),
+                    //               ],
+                    //             )),
+                    //       ]
+                    //     : null,
+                    // position: platform == ScreenSizeEnum.browser
+                    //     ? null
+                    //     : "Mid-Level Mobile Developer",
                     summary:
                         "Our team develops a white-label e-government solution platform for both mobile (iOS/Android) and kiosk (Windows/Linux) applications. We have successfully deployed this platform for major public services, including Rj Digital and Poupatempo Paraná. The kiosk system features complex hardware integration—including scanners, printers, and fingerprint readers—along with advanced software features like automatic document cropping and a proprietary WebRTC video call tool that connects citizens directly with state representatives.",
                     skills: diletta,

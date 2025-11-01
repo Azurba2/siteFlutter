@@ -92,7 +92,7 @@ class Projects extends StatelessWidget {
                 //kiosk: true,
               ),
               SharedCard(
-                height: platform != ScreenSizeEnum.browser ? 800 : 620,
+                height: platform != ScreenSizeEnum.browser ? 800 : 700,
                 width: 400,
                 title: "E-Government App \n(Mobile - iOS/Android)",
                 location: "At Diletta Solutions",
