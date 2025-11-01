@@ -7,16 +7,21 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:joao_site_flutter/consts/colors.dart';
 import 'package:joao_site_flutter/consts/image_paths.dart';
 import 'package:joao_site_flutter/dto/experience_skill_dto.dart';
+import 'package:joao_site_flutter/shared/time_line_tile.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SharedCard extends StatelessWidget {
   final String title;
+  final String? subtitle;
+  final String? logo;
   final String summary;
   final double height;
   final double width;
   final List<ExperienceSkillDto>? skills;
   final String? date;
   final String? button;
+  final List<String>? buttonTitleList;
+  final List<Function>? buttonOnPressedList;
   final String? image;
   final String? position;
   final String? location;
@@ -24,6 +29,7 @@ class SharedCard extends StatelessWidget {
   final String? award;
   final bool? store;
   final bool? kiosk;
+  final List<TimeLineTile>? timeLine;
 
   const SharedCard({
     Key? key,
@@ -31,9 +37,14 @@ class SharedCard extends StatelessWidget {
     required this.summary,
     required this.height,
     required this.width,
+    this.subtitle,
+    this.logo,
+    this.timeLine,
     this.skills,
     this.date,
     this.button,
+    this.buttonTitleList,
+    this.buttonOnPressedList,
     this.image,
     this.position,
     this.location,
@@ -89,8 +100,34 @@ class SharedCard extends StatelessWidget {
                         fontSize: 25,
                         color: ColorPalette.regularGreen,
                       ),
-                      textAlign: TextAlign.justify,
+                      textAlign: TextAlign.center,
                     ),
+                    if (subtitle != null) ...[
+                      Text(
+                        subtitle!,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          color: Colors.grey,
+                        ),
+                        textAlign: TextAlign.justify,
+                      ),
+                    ],
+                    if (logo != null) ...[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ClipRRect(
+                            child: Image.asset(
+                              logo!,
+                              height: 40,
+                              width: 40,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                    const SizedBox(height: 10),
+                    if (timeLine != null) ...[...timeLine!],
                     if (location != null) ...[
                       Text(
                         location!,
@@ -103,7 +140,7 @@ class SharedCard extends StatelessWidget {
                       )
                     ],
                     if (position != null) ...[
-                      const SizedBox(height: 15),
+                      const SizedBox(height: 10),
                       Text(
                         position!,
                         style: const TextStyle(
@@ -114,7 +151,7 @@ class SharedCard extends StatelessWidget {
                         textAlign: TextAlign.justify,
                       ),
                     ],
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 10),
                     Text(
                       summary,
                       style: const TextStyle(
@@ -123,7 +160,7 @@ class SharedCard extends StatelessWidget {
                       ),
                       textAlign: TextAlign.justify,
                     ),
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 10),
                     if (skills != null)
                       Wrap(
                         alignment: WrapAlignment.center,
@@ -182,6 +219,40 @@ class SharedCard extends StatelessWidget {
                           ),
                         ),
                       ),
+                    ],
+                    if (buttonTitleList != null &&
+                        buttonTitleList!.isNotEmpty &&
+                        buttonOnPressedList != null &&
+                        buttonOnPressedList!.length ==
+                            buttonTitleList!.length) ...[
+                      ...List.generate(buttonTitleList!.length, (index) {
+                        final String buttonTitle = buttonTitleList![index];
+                        final Function onPressed = buttonOnPressedList![index];
+
+                        return ElevatedButton(
+                          onPressed: () => onPressed(),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: ColorPalette.regularGreen,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 12,
+                              horizontal: 20,
+                            ),
+                            child: Text(
+                              buttonTitle,
+                              style: const TextStyle(
+                                fontSize: 15,
+                                color: Colors.white,
+                              ),
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                        );
+                      }),
                     ],
                     if (award != null) ...[
                       const SizedBox(height: 15),
@@ -260,59 +331,118 @@ Widget _skillsContainer(String imagePath, String text, double? size) {
 Widget _storeContainer(bool kiosk) {
   return Column(children: [
     kiosk == false
-        ? Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+        ? Column(
             children: [
-                GestureDetector(
-                  onTap: () async {
-                    final url = Uri.parse(
-                        'https://play.google.com/store/apps/details?id=br.gov.rj.proderj.rjdigital');
-                    if (await canLaunchUrl(url)) {
-                      await launchUrl(url);
-                    } else {
-                      print('Could not launch $url');
-                    }
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: Image.asset(
-                      Paths.googlePlay,
-                      width: 150,
+              Text(
+                "RJ Digital",
+                style: const TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () async {
+                        final url = Uri.parse(
+                            'https://play.google.com/store/apps/details?id=br.gov.rj.proderj.rjdigital');
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url);
+                        } else {
+                          print('Could not launch $url');
+                        }
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(5),
+                        child: Image.asset(
+                          Paths.googlePlay,
+                          width: 150,
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () async {
-                    final url = Uri.parse(
-                        "https://apps.apple.com/app/rj-digital/id1585703556");
-                    if (await canLaunchUrl(url)) {
-                      await launchUrl(url);
-                    } else {
-                      print('Could not launch $url');
-                    }
-                  },
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(5),
-                      child: SvgPicture.asset(
-                        Paths.appStore,
-                      )),
-                ),
-              ])
-        : Container(),
-    kiosk
-        ? Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              ClipRRect(
-                  borderRadius: BorderRadius.circular(5),
-                  child: SizedBox(
-                      height: 45,
-                      width: 140,
-                      child: Image.asset(Paths.microsoftStore))),
+                    GestureDetector(
+                      onTap: () async {
+                        final url = Uri.parse(
+                            "https://apps.apple.com/app/rj-digital/id1585703556");
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url);
+                        } else {
+                          print('Could not launch $url');
+                        }
+                      },
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(5),
+                          child: SvgPicture.asset(
+                            Paths.appStore,
+                          )),
+                    ),
+                  ]),
+              Text(
+                "Poupatempo Paraná",
+                style: const TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () async {
+                        final url = Uri.parse(
+                            'https://play.google.com/store/apps/details?id=br.gov.pr.poupatempo');
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url);
+                        } else {
+                          print('Could not launch $url');
+                        }
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(5),
+                        child: Image.asset(
+                          Paths.googlePlay,
+                          width: 150,
+                        ),
+                      ),
+                    ),
+                    // GestureDetector(
+                    //   onTap: () async {
+                    //     final url = Uri.parse(
+                    //         "https://apps.apple.com/app/rj-digital/id1585703556");
+                    //     if (await canLaunchUrl(url)) {
+                    //       await launchUrl(url);
+                    //     } else {
+                    //       print('Could not launch $url');
+                    //     }
+                    //   },
+                    //   child: ClipRRect(
+                    //       borderRadius: BorderRadius.circular(5),
+                    //       child: SvgPicture.asset(
+                    //         Paths.appStore,
+                    //       )),
+                    // ),
+                  ]),
             ],
           )
-        : Container()
+        : Container(),
+    // kiosk
+    //     ? Row(
+    //         mainAxisAlignment: MainAxisAlignment.center,
+    //         crossAxisAlignment: CrossAxisAlignment.center,
+    //         children: [
+    //           ClipRRect(
+    //               borderRadius: BorderRadius.circular(5),
+    //               child: SizedBox(
+    //                   height: 45,
+    //                   width: 140,
+    //                   child: Image.asset(Paths.microsoftStore))),
+    //         ],
+    //       )
+    //     : Container()
   ]);
 }

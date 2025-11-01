@@ -31,7 +31,7 @@ class TechStackContainer extends StatelessWidget {
   Widget techStackContainerBrowser() {
     return Container(
       height: 60,
-      width: 200,
+      width: 300,
       color: ColorPalette.appBarDark,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -53,7 +53,7 @@ class TechStackContainer extends StatelessWidget {
   Widget techStackContainerMobile() {
     return Container(
       height: 40,
-      width: 130,
+      width: 270,
       color: ColorPalette.appBarDark,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

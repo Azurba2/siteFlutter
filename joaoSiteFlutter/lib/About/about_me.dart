@@ -24,18 +24,18 @@ class _AboutMeState extends State<AboutMe> {
   }
 
   final List<Map<String, dynamic>> techStackDataBrowser = [
-    {
-      "text": ".NET",
-      "logoPath": "assets/images/net.png",
-      "height": 35.0,
-      "width": 35.0,
-    },
-    {
-      "text": "C#",
-      "logoPath": "assets/images/C#.png",
-      "height": 35.0,
-      "width": 35.0,
-    },
+    // {
+    //   "text": ".NET",
+    //   "logoPath": "assets/images/net.png",
+    //   "height": 35.0,
+    //   "width": 35.0,
+    // },
+    // {
+    //   "text": "C#",
+    //   "logoPath": "assets/images/C#.png",
+    //   "height": 35.0,
+    //   "width": 35.0,
+    // },
     {
       "text": "Dart",
       "logoPath": "assets/images/Dart_logo.png",
@@ -48,39 +48,39 @@ class _AboutMeState extends State<AboutMe> {
       "height": 35.0,
       "width": 30.0,
     },
-    {
-      "text": "Angular",
-      "logoPath": "assets/images/angular-logo.png",
-      "height": 35.0,
-      "width": 35.0,
-    },
-    {
-      "text": "SQL",
-      "logoPath": "assets/images/SQL.png",
-      "height": 50.0,
-      "width": 65.0,
-    },
+    // {
+    //   "text": "Angular",
+    //   "logoPath": "assets/images/angular-logo.png",
+    //   "height": 35.0,
+    //   "width": 35.0,
+    // },
+    // {
+    //   "text": "SQL",
+    //   "logoPath": "assets/images/SQL.png",
+    //   "height": 50.0,
+    //   "width": 65.0,
+    // },
     {
       "text": "Postman",
       "logoPath": "assets/images/postman.png",
       "height": 35.0,
       "width": 35.0,
     },
+    {
+      "text": "Google Cloud",
+      "logoPath": "assets/images/googleCloud.png",
+      "height": 35.0,
+      "width": 35.0,
+    },
+    {
+      "text": "Firebase",
+      "logoPath": "assets/images/firebase.png",
+      "height": 35.0,
+      "width": 35.0,
+    },
   ];
 
   final List<Map<String, dynamic>> techStackDataMobile = [
-    {
-      "text": ".NET",
-      "logoPath": "assets/images/net.png",
-      "height": 25.0,
-      "width": 25.0,
-    },
-    {
-      "text": "C#",
-      "logoPath": "assets/images/C#.png",
-      "height": 25.0,
-      "width": 25.0,
-    },
     {
       "text": "Dart",
       "logoPath": "assets/images/Dart_logo.png",
@@ -94,20 +94,20 @@ class _AboutMeState extends State<AboutMe> {
       "width": 20.0,
     },
     {
-      "text": "Angular",
-      "logoPath": "assets/images/angular-logo.png",
+      "text": "Postman",
+      "logoPath": "assets/images/postman.png",
       "height": 25.0,
       "width": 25.0,
     },
     {
-      "text": "SQL",
-      "logoPath": "assets/images/SQL.png",
-      "height": 40.0,
-      "width": 55.0,
+      "text": "Google Cloud",
+      "logoPath": "assets/images/googleCloud.png",
+      "height": 25.0,
+      "width": 25.0,
     },
     {
-      "text": "Postman",
-      "logoPath": "assets/images/postman.png",
+      "text": "Firebase",
+      "logoPath": "assets/images/firebase.png",
       "height": 25.0,
       "width": 25.0,
     },
@@ -212,7 +212,7 @@ class _AboutMeState extends State<AboutMe> {
                                   ElevatedButton(
                                     onPressed: () {
                                       _launchURL(
-                                          'https://1drv.ms/w/s!Aq_4EhaJUcWMj-tzlorOXjGy5ZyfBQ?e=Z9rfJm',
+                                          'https://1drv.ms/b/c/8cc551891612f8af/EZOlMCEAOwtCr3QA1l3D-1wBe36TDC1U8yM_DHpv1sWjIA?e=wOe75s',
                                           context);
                                     },
                                     style: ElevatedButton.styleFrom(
@@ -229,8 +229,7 @@ class _AboutMeState extends State<AboutMe> {
                                         SizedBox(
                                           height: 40,
                                           width: 40,
-                                          child: Image.asset(
-                                              "assets/images/Flag_of_the_United_States.png"),
+                                          child: Image.asset(Paths.usFlag),
                                         ),
                                         const SizedBox(height: 5),
                                         const Text(
@@ -247,7 +246,7 @@ class _AboutMeState extends State<AboutMe> {
                                   ElevatedButton(
                                     onPressed: () {
                                       _launchURL(
-                                          "https://1drv.ms/w/s!Aq_4EhaJUcWMj-txtfOua4yplzo22g?e=xxGkPv",
+                                          "https://1drv.ms/b/c/8cc551891612f8af/EQXzyKhUyutFgfJze40u1jIBefHLs-rBqVlRFAzoiA68ow?e=WxHvBT",
                                           context);
                                     },
                                     style: ElevatedButton.styleFrom(
@@ -264,8 +263,7 @@ class _AboutMeState extends State<AboutMe> {
                                         SizedBox(
                                           height: 40,
                                           width: 40,
-                                          child: Image.asset(
-                                              "assets/images/Flag_of_Brazil.png"),
+                                          child: Image.asset(Paths.brazilFlag),
                                         ),
                                         const SizedBox(height: 5),
                                         const Text(
