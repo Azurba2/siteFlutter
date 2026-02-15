@@ -80,11 +80,18 @@ class Education extends StatelessWidget {
                     //   summary: "Master's in Microbiology",
                     // ),
                     SharedCard(
-                      height: platform == ScreenSizeEnum.browser ? 500 : 550,
+                      height: platform == ScreenSizeEnum.browser ? 550 : 550,
                       width: 400,
-                      date: platform == ScreenSizeEnum.browser
-                          ? null
-                          : "2018 - 2022",
+                      date: "2026 - Current",
+                      image: "assets/images/puc.JPG",
+                      title: "PUC - Campinas",
+                      summary:
+                          "Postgraduate Degree in Software Architecture, Data Science, and Cybersecurity",
+                    ),
+                    SharedCard(
+                      height: platform == ScreenSizeEnum.browser ? 550 : 550,
+                      width: 400,
+                      date: "2018 - 2022",
                       image: "assets/images/csuimg.JPG",
                       title: "Colorado State University",
                       summary: "Bachelor in Computer Science",
